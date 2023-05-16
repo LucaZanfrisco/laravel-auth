@@ -12,13 +12,13 @@
             <li class="my-3">Creation Date : {{ $project->creation_date }}</li>
             <li class="my-3">Price : {{ $project->price }} €</li>
             <li class="my-3">Visibility : <span class="text-uppercase">{{ $project->visibility }}</span></li>
-            @if ($project->on_work == 1)
+            @if ($project->done == 1)
                 <li class="d-flex align-items-center gap-2">  
-                    Done: <div class="circle work"></div>
+                    Done: <div class="circle done"></div>
                 </li>
             @else
                 <li class="d-flex align-items-center gap-2">
-                    Done: <div class="circle done"></div>
+                    Done: <div class="circle work"></div>
                 </li>
             @endif
         </ul>

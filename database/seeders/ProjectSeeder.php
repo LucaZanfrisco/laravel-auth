@@ -25,7 +25,7 @@ class ProjectSeeder extends Seeder
             $project->description = $faker->text(1000);
             $project->creation_date = $faker->date();
             $project->slug = Str::slug($project->project_name);
-            $project->on_work = $faker->boolean();
+            $project->done = $faker->boolean();
             $project->visibility = $faker->randomElement(['public','private']);
             $project->price = $faker->randomFloat(2,1,10000);
             $project->save();

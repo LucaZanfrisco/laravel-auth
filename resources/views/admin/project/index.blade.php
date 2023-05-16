@@ -23,10 +23,10 @@
                     <td>{{ $project->creation_date }}</td>
                     <td>{{ $project->visibility }}</td>
                     <td>{{ $project->price }}</td>
-                    @if ($project->on_work == 1)
-                        <td><div class="circle work"></div></td>
-                    @else
+                    @if ($project->done == 1)
                         <td><div class="circle done"></div></td>
+                    @else
+                        <td><div class="circle work"></div></td>
                     @endif
                     <td >
                         <ul class="d-flex gap-1 list-unstyled">

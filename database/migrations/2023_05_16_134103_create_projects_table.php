@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->date('creation_date');
             $table->string('slug');
-            $table->boolean('on_work')->default(true);
+            $table->boolean('done')->default(false);
             $table->string('visibility',10)->default('privato');
             $table->unsignedFloat('price',6,2)->nullable();
             $table->timestamps();
