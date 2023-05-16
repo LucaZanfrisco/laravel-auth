@@ -5,6 +5,7 @@
     <h2 class="fs-4 text-secondary my-4">
         Project List
     </h2>
+    <a href="{{ route('admin.project.create')}}" class="btn btn-dark mb-4">Add Project</a>
     <table class="table align-middle">
         <thead>
             <tr>
