@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_name' => 'required|string|max:255',
+           'project_name' => 'required|string|max:255',
             'description' => 'string|max:1000|nullable',
             'creation_date' => 'required|date',
             'done' => 'required|boolean',

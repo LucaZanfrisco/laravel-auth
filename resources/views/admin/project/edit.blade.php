@@ -4,6 +4,7 @@
     <div class="container">
         <form action="{{ route('admin.project.update', $project->id) }}" method="POST" class="mt-3">
             @csrf
+            @method('PATCH')
             <div>
                 <label for="project_name" class="form-label">Name</label>
                 <input type="text" class="form-control @error('project_name') is-invalid @enderror" id="project_name"
