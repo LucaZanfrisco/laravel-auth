@@ -11,6 +11,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Date</th>
                 <th scope="col">Visibility</th>
+                <th scope="col">Price</th>
                 <th scope="col">Done</th>
                 <th scope="col">Action</th>
             </tr>
@@ -21,6 +22,7 @@
                     <td>{{ $project->project_name }}</td>
                     <td>{{ $project->creation_date }}</td>
                     <td>{{ $project->visibility }}</td>
+                    <td>{{ $project->price }}</td>
                     @if ($project->on_work == 1)
                         <td><div class="circle work"></div></td>
                     @else

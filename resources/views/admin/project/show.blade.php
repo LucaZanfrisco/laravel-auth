@@ -2,19 +2,23 @@
 
 @section('content')
     <div class="container">
-        <h2 class="fs-4 text-secondary my-4">
-            {{ $project->project_name }}
-        </h2>
-        <ul class="list-unstyled ">
-            <li>{{ $project->creation_date }}</li>
-            <li class="my-3">{{ $project->visibility }}</li>
+        <ul class="list-unstyled card p-3 mt-4">
+            <li>
+                <h2 class="fs-4 text-secondary my-4">
+                    {{ $project->project_name }}
+                </h2>
+            </li>
+            <li>{{ $project->description }}</li>
+            <li class="my-3">Creation Date : {{ $project->creation_date }}</li>
+            <li class="my-3">Price : {{ $project->price }} €</li>
+            <li class="my-3">Visibility : <span class="text-uppercase">{{ $project->visibility }}</span></li>
             @if ($project->on_work == 1)
-                <li>
-                    <div class="circle work"></div>
+                <li class="d-flex align-items-center gap-2">  
+                    Done: <div class="circle work"></div>
                 </li>
             @else
-                <li>
-                    <div class="circle done"></div>
+                <li class="d-flex align-items-center gap-2">
+                    Done: <div class="circle done"></div>
                 </li>
             @endif
         </ul>
