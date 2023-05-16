@@ -60,7 +60,7 @@
             </div>
 
             <a href="{{ route('admin.project.index') }}" class="btn btn-sm btn-dark">Cancel</a>
-            <button type="submit" class="btn btn-sm btn-success">Edit</button>
+            <button type="submit" class="btn btn-sm btn-success">Save</button>
         </form>
     </div>
 @endsection
