@@ -1,1 +1,12 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.done{
+    background-color: lightgreen;
+}
+.work{
+    background-color: red;
+}
