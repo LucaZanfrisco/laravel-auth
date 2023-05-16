@@ -24,7 +24,12 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'project_name' => 'required|string|max:255',
+            'description' => 'string|max:1000|nullable',
+            'creation_date' => 'required|date',
+            'done' => 'required|boolean',
+            'visibility' => 'string|max:10|nullable',
+            'price' => 'numeric|between:1,10000|nullable'
         ];
     }
 }
