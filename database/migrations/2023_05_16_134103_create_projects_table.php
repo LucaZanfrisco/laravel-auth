@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('project_name')->unique();
+            $table->text('description')->nullable();
             $table->date('creation_date');
             $table->string('slug');
             $table->boolean('on_work')->default(true);
             $table->string('visibility',10)->default('privato');
+            $table->unsignedFloat('price',6,2)->nullable();
             $table->timestamps();
         });
     }
