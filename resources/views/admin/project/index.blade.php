@@ -27,6 +27,7 @@
         <table class="table align-middle">
             <thead>
                 <tr>
+                    <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Date</th>
                     <th scope="col">Visibility</th>
@@ -38,6 +39,7 @@
             <tbody>
                 @foreach ($projects as $project)
                     <tr>
+                        <td>{{ $project->id }}</td>
                         <td>{{ $project->project_name }}</td>
                         <td>{{ $project->creation_date }}</td>
                         <td class="text-uppercase">{{ $project->visibility }}</td>

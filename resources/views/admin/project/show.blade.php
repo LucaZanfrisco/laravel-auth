@@ -4,6 +4,7 @@
     <div class="container">
         <ul class="list-unstyled card p-3 mt-4">
             <li>
+                <a href="{{ route('admin.project.index')}}" class="btn btn-sm btn-danger">Back</a>
                 <h2 class="fs-4 text-secondary my-4">
                     {{ $project->project_name }}
                 </h2>
