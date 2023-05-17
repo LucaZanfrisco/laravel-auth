@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('admin.project.update', $project->id) }}" method="POST" class="mt-3">
+        <form action="{{ route('admin.project.update', $project) }}" method="POST" class="mt-3">
             @csrf
             @method('PATCH')
             <div>

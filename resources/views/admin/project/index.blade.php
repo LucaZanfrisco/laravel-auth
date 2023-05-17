@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ $project->project_name }}</td>
                         <td>{{ $project->creation_date }}</td>
-                        <td>{{ $project->visibility }}</td>
+                        <td class="text-uppercase">{{ $project->visibility }}</td>
                         <td>{{ $project->price }}</td>
                         @if ($project->done == 1)
                             <td>
@@ -35,9 +35,9 @@
                         @endif
                         <td>
                             <ul class="d-flex gap-1 list-unstyled">
-                                <li><a href="{{ route('admin.project.show', $project->id) }}"
+                                <li><a href="{{ route('admin.project.show', $project) }}"
                                         class="btn btn-sm btn-success">Show</a></li>
-                                <li><a href="{{ route('admin.project.edit', $project->id) }}"
+                                <li><a href="{{ route('admin.project.edit', $project) }}"
                                         class="btn btn-sm btn-warning">Edit</a></li>
                                 <li>
                                     <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
