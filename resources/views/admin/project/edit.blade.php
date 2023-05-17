@@ -53,7 +53,7 @@
             </div>
             <div class="my-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" name="price" id="price"
+                <input type="text" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" value="{{ old('price', $project->price) }}">
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>

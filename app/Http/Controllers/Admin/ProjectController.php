@@ -48,7 +48,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return view('admin.project.show',compact('project'));
+        return redirect()->route('admin.project.index')->with('message','Project added successfully');
     }
 
     /**
@@ -88,7 +88,7 @@ class ProjectController extends Controller
 
         $project->update($data);
 
-        return view('admin.project.show',compact('project'));
+        return redirect()->route('admin.project.index')->with('message', "Update $project->project_name successfully");
     }
 
     /**
