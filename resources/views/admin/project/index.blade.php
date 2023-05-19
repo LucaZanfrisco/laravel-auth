@@ -69,20 +69,20 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINA</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <div>DELETE PROJECT: {{ $project->nome }}</div>
+                                    <div>Eliminare il progetto n°{{$project->id}}: {{ $project->nome }} ?</div>
                                 </div>
                                 <div class="modal-footer">
                                     <form action="{{ route('admin.project.destroy', $project) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-sm btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Annulla</button>
+                                        <button type="submit" class="btn btn-danger">Elimina</button>
                                     </form>
                                 </div>
                             </div>
