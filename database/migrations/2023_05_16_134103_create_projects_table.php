@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Spatie\FlareClient\Flare;
 
 return new class extends Migration
 {
@@ -15,13 +16,13 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('project_name')->unique();
-            $table->text('description')->nullable();
-            $table->date('creation_date');
+            $table->string('nome')->unique();
+            $table->string('immagine')->nullable();
+            $table->text('descrizione')->nullable();
+            $table->date('data_di_creazione');
             $table->string('slug');
-            $table->boolean('done')->default(false);
-            $table->string('visibility',10)->default('privato');
-            $table->unsignedFloat('price',6,2)->nullable();
+            $table->boolean('completato')->default(false);
+            $table->boolean('riscosso')->default(false);
             $table->timestamps();
         });
     }

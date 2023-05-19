@@ -21,13 +21,12 @@ class ProjectSeeder extends Seeder
         Project::truncate();
         for($i = 0; $i < 20; $i++){
             $project = new Project();
-            $project->project_name = $faker->sentence(3);
-            $project->description = $faker->text(1000);
-            $project->creation_date = $faker->date();
-            $project->slug = Str::slug($project->project_name);
-            $project->done = $faker->boolean();
-            $project->visibility = $faker->randomElement(['public','private']);
-            $project->price = $faker->randomFloat(2,1,10000);
+            $project->nome = $faker->sentence(3);
+            $project->descrizione = $faker->text(1000);
+            $project->data_di_creazione = $faker->date();
+            $project->slug = Str::slug($project->nome);
+            $project->completato = $faker->boolean();
+            $project->riscosso = $faker->boolean();
             $project->save();
         }
     }
