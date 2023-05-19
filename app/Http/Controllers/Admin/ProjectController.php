@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -42,6 +43,10 @@ class ProjectController extends Controller
         $data = $request->validated();
         
         $project = new Project();
+        if(isset($data['immagine'])){
+            dd($data['immagine']);
+            $project->immagine = Storage::put('uploads', $data['immagine']);
+        }
         
         $project->fill($data);
         $project->slug = Str::slug($data['nome'], '-');
@@ -83,9 +88,13 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
-        
-        $project->slug = Str::slug($data['nome'], '-');
 
+        if(isset($data['immagine'])){
+            $project->immagine = Storage::put('uploads', $data['immagine']);
+        }
+
+        $project->slug = Str::slug($data['nome'], '-');
+        
         $project->update($data);
 
         return redirect()->route('admin.project.index')->with('message', "Progetto $project->id modificato con successo");
