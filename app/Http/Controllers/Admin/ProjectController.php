@@ -94,7 +94,7 @@ class ProjectController extends Controller
         }
 
         $project->slug = Str::slug($data['nome'], '-');
-        
+
         $project->update($data);
 
         return redirect()->route('admin.project.index')->with('message', "Progetto $project->id modificato con successo");
@@ -109,6 +109,11 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $deleteProject = $project->project_name;
+
+        if($project->immagine){
+            Storage::delete($project->immagine);
+        }
+        
         $project->delete();
         return to_route('admin.project.index')->with('message', "Deleted $deleteProject successfully");
     }
