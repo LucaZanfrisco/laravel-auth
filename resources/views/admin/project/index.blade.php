@@ -52,13 +52,13 @@
                         <td>
                             <ul class="d-flex gap-1 list-unstyled m-0">
                                 <li><a href="{{ route('admin.project.show', $project) }}"
-                                        class="btn btn-sm btn-success">Show</a></li>
+                                        class="btn btn-sm btn-success">Dettaglio</a></li>
                                 <li><a href="{{ route('admin.project.edit', $project) }}"
-                                        class="btn btn-sm btn-warning">Edit</a></li>
+                                        class="btn btn-sm btn-warning">Modifica</a></li>
                                 <li>
                                     <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                                         data-bs-target="#delete{{ $project->id }}">
-                                        Delete
+                                        Elimina
                                     </button>
                                 </li>
                             </ul>
