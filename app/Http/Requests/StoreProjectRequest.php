@@ -24,12 +24,11 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-           'project_name' => 'required|string|max:255|unique:projects,project_name',
-            'description' => 'string|max:1000|nullable',
-            'creation_date' => 'required|date',
-            'done' => 'required|boolean',
-            'visibility' => 'string|max:10|nullable',
-            'price' => 'numeric|between:1,10000|nullable' 
+            'nome' => 'required|string|max:255|unique:projects,project_name',
+            'descrizione' => 'string|max:1000|nullable',
+            'data_di_creazione' => 'required|date',
+            'completato' => 'required|boolean',
+            'riscosso' => 'required|boolean'
         ];
     }
 }

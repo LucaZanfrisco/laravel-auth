@@ -25,17 +25,16 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_name' => [
+            'nome' => [
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('projects','project_name')->ignore($this->project),
+                Rule::unique('projects','nome')->ignore($this->project),
             ],
-            'description' => 'string|max:1000|nullable',
-            'creation_date' => 'required|date',
-            'done' => 'required|boolean',
-            'visibility' => 'string|max:10|nullable',
-            'price' => 'numeric|between:1,10000|nullable'
+            'descrizione' => 'string|max:1000|nullable',
+            'data_di_creazione' => 'required|date',
+            'completato' => 'required|boolean',
+            'riscosso' => 'required|boolean'
         ];
     }
 }

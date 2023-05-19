@@ -49,8 +49,8 @@
                 @enderror
             </div>
 
-            <a href="{{ route('admin.project.index') }}" class="btn btn-sm btn-dark">Cancella</a>
-            <button type="submit" class="btn btn-sm btn-success">Salva</button>
+            <a href="{{ route('admin.project.index') }}" class="btn btn-dark">Cancella</a>
+            <button type="submit" class="btn btn-success">Salva</button>
         </form>
     </div>
 @endsection
