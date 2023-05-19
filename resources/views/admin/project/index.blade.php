@@ -10,7 +10,7 @@
         </div>
 
         @if (session('message'))
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="message">
             <div class="toast show align-items-center my-bg-success border-0" role="alert" aria-live="assertive"
                 aria-atomic="true">
                 <div class="d-flex">
