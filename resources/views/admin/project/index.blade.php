@@ -4,17 +4,17 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center my-4">
             <h2 class="fs-4 text-secondary">
-                Project List
+                Lista Progetti
             </h2>
-            <a href="{{ route('admin.project.create') }}" class="btn btn-dark">Add Project</a>
+            <a href="{{ route('admin.project.create') }}" class="btn btn-dark">Aggiungi Progetto</a>
         </div>
 
         @if (session('message'))
             <div class="toast-container position-fixed bottom-0 end-0 p-3" id="message">
                 <div class="toast show align-items-center my-bg-success border-0" role="alert" aria-live="assertive"
                     aria-atomic="true">
-                    <div class="d-flex">
-                        <div class="toast-body">
+                    <div class="d-flex py-2">
+                        <div class="toast-body fw-bold">
                             {{ session('message') }}
                         </div>
                         <button type="button" class="btn-close me-3 m-auto" data-bs-dismiss="toast"

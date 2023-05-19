@@ -44,11 +44,11 @@ class ProjectController extends Controller
         $project = new Project();
         
         $project->fill($data);
-        $project->slug = Str::slug($data['project_name'], '-');
+        $project->slug = Str::slug($data['nome'], '-');
 
         $project->save();
 
-        return redirect()->route('admin.project.index')->with('message','Project added successfully');
+        return redirect()->route('admin.project.index')->with('message','Progetto aggiunto con successo');
     }
 
     /**
@@ -84,11 +84,11 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         
-        $project->slug = Str::slug($data['project_name'], '-');
+        $project->slug = Str::slug($data['nome'], '-');
 
         $project->update($data);
 
-        return redirect()->route('admin.project.index')->with('message', "Update $project->project_name successfully");
+        return redirect()->route('admin.project.index')->with('message', "Progetto $project->id modificato con successo");
     }
 
     /**
