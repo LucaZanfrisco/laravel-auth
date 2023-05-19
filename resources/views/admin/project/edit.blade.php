@@ -50,8 +50,8 @@
                 @enderror
             </div>
 
-            <a href="{{ route('admin.project.index') }}" class="btn btn-dark">Cancel</a>
-            <button type="submit" class="btn btn-success">Edit</button>
+            <a href="{{ route('admin.project.index') }}" class="btn btn-dark">Cancella</a>
+            <button type="submit" class="btn btn-success">Modifica</button>
         </form>
     </div>
 @endsection
