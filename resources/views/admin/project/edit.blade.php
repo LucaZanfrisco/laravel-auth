@@ -6,62 +6,52 @@
             @csrf
             @method('PATCH')
             <div>
-                <label for="project_name" class="form-label">Name</label>
-                <input type="text" class="form-control @error('project_name') is-invalid @enderror" id="project_name"
-                    name="project_name" value="{{ old('project_name', $project->project_name) }}">
-                @error('project_name')
+                <label for="nome" class="form-label fs-5 fw-bold">Nome</label>
+                <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome"
+                    name="nome" value="{{ old('nome', $project->nome) }}">
+                @error('nome')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="my-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea name="description" id="description" cols="30" rows="4"
-                    class="form-control @error('description') is-invalid @enderror">{{ old('description', $project->description) }}</textarea>
-                @error('description')
+                <label for="descrizione" class="form-label fs-5 fw-bold">Descrizione</label>
+                <textarea name="descrizione" id="descrizione" cols="30" rows="6"
+                    class="form-control @error('description') is-invalid @enderror">{{ old('descrizione', $project->descrizione) }}</textarea>
+                @error('descrizione')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="my-3">
-                <label for="creation_date" class="form-label">Date</label>
-                <input type="date" class="form-control @error('creation_date') is-invalid @enderror" id="creation_date"
-                    name="creation_date" value="{{ old('creation_date', $project->creation_date) }}">
-                @error('creation_date')
+                <label for="data_di_creazione" class="form-label fs-5 fw-bold">Data di creazione</label>
+                <input type="date" class="form-control @error('data_di_creazione') is-invalid @enderror" id="data_di_creazione"
+                    name="data_di_creazione" value="{{ old('data_di_creazione', $project->data_di_creazione) }}">
+                @error('data_di_creazione')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="my-3">
-                <label for="done" class="form-label">Done</label>
-                <select name="done" id="done" class="form-select @error('done') is-invalid @enderror">
-                    <option value="1" {{ old('done', $project->done) == 1 ? 'selected' : '' }}>Done</option>
-                    <option value="0" {{ old('done', $project->done) == 0 ? 'selected' : '' }}>Undone</option>
+                <label for="completato" class="form-label fs-5 fw-bold">Completato</label>
+                <select name="completato" id="completato" class="form-select @error('completato') is-invalid @enderror">
+                    <option value="1" {{ old('completato', $project->completato) == 1 ? 'selected' : '' }}>Completato</option>
+                    <option value="0" {{ old('completato', $project->completato) == 0 ? 'selected' : '' }}>Non completato</option>
                 </select>
-                @error('done')
+                @error('completato')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="my-3">
-                <label for="visibility" class="form-label">Visibility</label>
-                <select name="visibility" id="visibility" class="form-select @error('visibility') is-invalid @enderror">
-                    <option value="public" {{ old('visibility', $project->visibility) === 'public' ? 'selected' : null }}>
-                        Public</option>
-                    <option value="private"
-                        {{ old('visibility', $project->visibility) === 'private' ? 'selected' : null }}>Private</option>
+                <label for="riscosso" class="form-label fs-5 fw-bold">Riscosso</label>
+                <select name="riscosso" id="riscosso" class="form-select @error('riscosso') is-invalid @enderror">
+                    <option value="1" {{ old('riscosso', $project->riscosso) == 1 ? 'selected' : '' }}>Riscosso</option>
+                    <option value="0" {{ old('riscosso', $project->riscosso) == 0 ? 'selected' : '' }}>Non riscosso</option>
                 </select>
-                @error('visibility')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="my-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="text" name="price" id="price"
-                    class="form-control @error('price') is-invalid @enderror" value="{{ old('price', $project->price) }}">
-                @error('price')
+                @error('riscosso')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
-            <a href="{{ route('admin.project.index') }}" class="btn btn-sm btn-dark">Cancel</a>
-            <button type="submit" class="btn btn-sm btn-success">Edit</button>
+            <a href="{{ route('admin.project.index') }}" class="btn btn-dark">Cancel</a>
+            <button type="submit" class="btn btn-success">Edit</button>
         </form>
     </div>
 @endsection
